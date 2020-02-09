@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>給与推定アプリ</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+
+<body class="main">
+
+    <div class="heading">
+        <h1>給与推定アプリ　SalaryPredict</h1>
+    </div>
+
+
+    <div>
+        <form method="post" action="/result">
+            <table id="form">
+                <tr>
+                    <td>役職（0=役職なし, 1=主任, 2=係長, 3=課長, 4=部長）</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="position" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="4"
+                            placeholder="1" required></td>
+                </tr>
+                <tr>
+                    <td>年齢（歳）</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="age" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="4" placeholder="30"
+                            required></td>
+                </tr>
+                <tr>
+                    <td>勤務地</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="area" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="4" placeholder="1"
+                            required></td>
+                </tr>
+                <tr>
+                    <td>性別（1=男性, 2=女性）</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="sex" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="4" placeholder="1"
+                            required></td>
+                </tr>
+                <tr>
+                    <td>配偶者の有無（0=なし, 1=あり）</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="partner" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="4" placeholder="1"
+                            required></td>
+                </tr>
+                <tr>
+                    <td>子供の人数（人）</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="num_child" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="4"
+                            placeholder="2" required></td>
+                </tr>
+                <tr>
+                    <td>学歴（0=高校, 1=短大専門学校, 2=大学, 3=修士, 4=博士）</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="education" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="4"
+                            placeholder="3" required></td>
+                </tr>
+                <tr>
+                    <td>勤続年数（年）</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="service_length" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="4"
+                            placeholder="10" required></td>
+                </tr>
+                <tr>
+                    <td>一週間あたりの勉強時間（h）</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="study_time" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="4"
+                            placeholder="7" required></td>
+                </tr>
+                <tr>
+                    <td>通勤時間（h）</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="commute" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="4" placeholder="1"
+                            required></td>
+                </tr>
+                <tr>
+                    <td>一ヶ月あたりの残業時間（h）</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="overtime" pattern="^([1-9]\d*|0)(\.\d+)?$" maxlength="4"
+                            placeholder="20" required></td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="Go!"></td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+<!-- 
+position,
+age,
+area,
+sex,
+partner,
+num_child,
+education,
+service_length,
+study_time,
+commute,
+overtime, 
+-->
