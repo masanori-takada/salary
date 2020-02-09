@@ -1,1 +1,1 @@
-web: gunicorn beer_recommender:app --log-file -
+web: gunicorn salary_predict:app --log-file -
