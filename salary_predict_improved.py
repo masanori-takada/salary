@@ -1,6 +1,7 @@
 import pickle
 import numpy as np
 import pandas as pd
+import os
 from flask import Flask, render_template, request
 import warnings
 warnings.filterwarnings('ignore')
@@ -159,4 +160,6 @@ def result():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5001, debug=True)  # ポート5001で起動 
+    # 環境変数からポートを取得（Render、Heroku対応）
+    port = int(os.environ.get('PORT', 5001))
+    app.run(host='0.0.0.0', port=port, debug=False)  # 本番環境ではdebug=False 
