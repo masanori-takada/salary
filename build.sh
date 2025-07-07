@@ -2,12 +2,16 @@
 # exit on error
 set -o errexit
 
-# Force Python 3.10
+echo "=== Build Script Started ==="
 echo "Python version check:"
 python --version
+python -c "import sys; print(f'Python {sys.version}')"
 
-# Install dependencies
+echo "=== Installing dependencies ==="
 pip install --upgrade pip
 pip install -r requirements.txt
 
-echo "Build completed successfully!" 
+echo "=== Verifying installations ==="
+pip list | grep -E "(Flask|pandas|scikit-learn|lightgbm|numpy)"
+
+echo "=== Build completed successfully! ===" 
