@@ -2,12 +2,9 @@ services:
   - type: web
     name: salary-predictor
     env: python
-    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
     plan: free
-    buildCommand: ./build.sh
-    startCommand: gunicorn salary_predict_improved:app --bind 0.0.0.0:$PORT
     envVars:
-      - key: PYTHON_VERSION
-        value: "3.9"
       - key: PORT
         value: "10000" 
