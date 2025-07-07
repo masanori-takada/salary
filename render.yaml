@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: salary-predictor
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn salary_predict_simple:app
+    plan: free
+    environmentVariables:
+      - key: PYTHON_VERSION
+        value: 3.10.12
+    envVars:
+      - key: PORT
+        value: 10000 
