@@ -1,1 +1,1 @@
-web: gunicorn salary_predict_improved:app --log-file -
+web: gunicorn salary_predict_simple:app --log-file -
